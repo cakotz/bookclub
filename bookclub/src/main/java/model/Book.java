@@ -16,6 +16,10 @@ public class Book {
         this.numOfPages = numOfPages;
         this.authors = author;
     }
+    public Book(String isbn, String title) {
+        this.isbn = isbn;
+        this.title = title;
+    }
 
     public Book() {}
 

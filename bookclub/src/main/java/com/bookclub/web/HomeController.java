@@ -1,8 +1,11 @@
 package com.bookclub.web;
 
+import jakarta.validation.Valid;
 import model.Book;
+import model.WishlistItem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,8 +48,6 @@ public class HomeController {
 
         MemBookDao bookDao = new MemBookDao();
         Book book = bookDao.find(isbn);
-
-        System.out.println(book.toString());
 
         model.addAttribute("book", book);
         return "monthly-books/view";
