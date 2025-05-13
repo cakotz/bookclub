@@ -1,7 +1,7 @@
-package service.impl;
+package com.bookclub.service.impl;
 
-import model.Book;
-import service.dao.BookDao;
+import com.bookclub.model.Book;
+import com.bookclub.service.dao.BookDao;
 
 import java.util.ArrayList;
 import java.util.Arrays;

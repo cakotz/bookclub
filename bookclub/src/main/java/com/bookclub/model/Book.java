@@ -1,4 +1,4 @@
-package model;
+package com.bookclub.model;
 
 import java.util.List;
 

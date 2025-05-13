@@ -1,15 +1,12 @@
 package com.bookclub.web;
 
-import jakarta.validation.Valid;
-import model.Book;
-import model.WishlistItem;
+import com.bookclub.model.Book;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import service.impl.MemBookDao;
+import com.bookclub.service.impl.MemBookDao;
 
 import java.util.List;
 
