@@ -1,6 +1,5 @@
 package com.bookclub.web;
 
-import jakarta.validation.Valid;
 import com.bookclub.model.WishlistItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.bookclub.service.dao.WishlistDao;
 import com.bookclub.service.impl.MongoWishListDao;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller

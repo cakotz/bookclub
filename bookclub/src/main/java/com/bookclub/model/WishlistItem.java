@@ -1,7 +1,7 @@
 package com.bookclub.model;
 
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
 
 public class WishlistItem {
