@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import com.bookclub.service.impl.MemBookDao;
+import com.bookclub.service.impl.RestBookDao;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
 public class HomeController {
     @RequestMapping(method = RequestMethod.GET)
     public String showHome(Model model) {
-        MemBookDao bookDao = new MemBookDao();
+        RestBookDao bookDao = new RestBookDao();
         List<Book> books = bookDao.list();
 
         for (Book book : books) {
@@ -43,7 +43,7 @@ public class HomeController {
         String isbn = id;
         System.out.println(id);
 
-        MemBookDao bookDao = new MemBookDao();
+        RestBookDao bookDao = new RestBookDao();
         Book book = bookDao.find(isbn);
 
         model.addAttribute("book", book);
