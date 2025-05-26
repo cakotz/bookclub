@@ -15,6 +15,8 @@ public class WishlistItem {
     @Id
     private String id;
 
+    private String username;
+
     public WishlistItem() {}
     public WishlistItem(String isbn, String title) {
         this.isbn = isbn;
@@ -43,6 +45,14 @@ public class WishlistItem {
 
     @Override
     public String toString() {
-        return "WishlistItem{id=%s, isbn=%s, title=%s}";
+        return "WishlistItem{id=%s, isbn=%s, title=%s, username=%s}";
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

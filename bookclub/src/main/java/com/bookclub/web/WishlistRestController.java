@@ -2,8 +2,9 @@ package com.bookclub.web;
 
 import com.bookclub.model.WishlistItem;
 import com.bookclub.service.dao.WishlistDao;
-import com.bookclub.service.impl.MongoWishListDao;
+import com.bookclub.service.impl.MongoWishlistDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 @RequestMapping(path = "/api/wishlist", produces = "application/json")
 @CrossOrigin(origins = "*")
 public class WishlistRestController {
-    WishlistDao wishlistDao = new MongoWishListDao();
+    WishlistDao wishlistDao = new MongoWishlistDao();
 
     @Autowired
     public void setWishlistDao(WishlistDao wishlistDao) {
@@ -20,8 +21,10 @@ public class WishlistRestController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<WishlistItem> showWishlist() {
-        return wishlistDao.list();
+    public List<WishlistItem> showWishlist(Authentication authentication) {
+        String username = authentication.getName();
+
+        return wishlistDao.list(username);
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
